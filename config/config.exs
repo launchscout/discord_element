@@ -48,6 +48,7 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 config :nostrum,
+  token: System.get_env("DISCORD_BOT_TOKEN"),
   gateway_intents: :all
 
 # Import environment specific config. This must remain at the bottom
