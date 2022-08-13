@@ -15,13 +15,13 @@ defmodule DiscordElementWeb.DiscordChatChannel do
     {:noreply, Map.merge(state, %{name: name, channel_id: channel.id})}
   end
 
-  def handle_message({:message_created, from, content}, %{messages: messages} = state) do
-    {:noreply, Map.put(state, :messages, messages ++ [%{from: from, content: content}])}
-  end
-
-  def handle_event("new_message", %{"message" => message}, %{channel_id: channel_id, name: name, messages: messages} = state) do
+  def handle_event("new_message", %{"message" => message}, %{channel_id: channel_id} = state) do
     Api.create_message(channel_id, content: message)
     {:noreply, state}
+  end
+
+  def handle_message({:message_created, from, content}, %{messages: messages} = state) do
+    {:noreply, Map.put(state, :messages, messages ++ [%{from: from, content: content}])}
   end
 
 end
