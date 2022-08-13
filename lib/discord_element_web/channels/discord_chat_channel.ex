@@ -1,5 +1,5 @@
 defmodule DiscordElementWeb.DiscordChatChannel do
-  use LiveState.Channel, web_module: DiscordElementWeb
+  use LiveState.Channel, web_module: DiscordElementWeb, json_patch: true
   alias Phoenix.PubSub
   alias Nostrum.Api
 

@@ -51,7 +51,7 @@ defmodule DiscordElement.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:nostrum, "~> 0.4"},
       {:cowlib, "~> 2.11", hex: :remedy_cowlib, override: true},
-      {:live_state, ">= 0.0.0"}
+      {:live_state, "~> 0.5.0"}
     ]
   end
 
